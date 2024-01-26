@@ -1,0 +1,7 @@
+[user]
+	name = Jérémy Doiron
+	email = jeremy.doiron.1@gmail.com
+[core]
+	editor = code --wait
+[init]
+	defaultBranch = main
