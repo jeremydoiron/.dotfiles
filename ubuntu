@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 if [[ -z $STOW_FOLDERS ]]; then
     STOW_FOLDERS="bin,.tmux,zsh,git"
 fi
