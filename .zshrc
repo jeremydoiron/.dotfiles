@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/zsh/.zsh_profile
+source ~/.zsh/.zsh_profile
 source /opt/ros/foxy/setup.zsh
 
 # go
