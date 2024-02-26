@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf tmux ubuntu)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,10 +100,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.zsh/.zsh_profile
+
+# ROS2
 source /opt/ros/foxy/setup.zsh
 
 # go
 export PATH=$PATH:/usr/local/go/bin
+
 # fnm
 export PATH="/home/jaaay/.local/share/fnm:$PATH"
 eval "`fnm env`"
