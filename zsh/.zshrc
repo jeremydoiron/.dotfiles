@@ -110,3 +110,14 @@ export PATH=$PATH:/usr/local/go/bin
 # fnm
 export PATH="/home/jaaay/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+# pnpm
+export PNPM_HOME="/home/jaaay/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# OCaml
+eval $(opam env)
