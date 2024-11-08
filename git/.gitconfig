@@ -9,7 +9,7 @@
 	recurse = true
 	
 [alias]
-	st = status -s
+    st = status -s
     sta = status
     conf = config --global --edit
     cge = config --global --edit
