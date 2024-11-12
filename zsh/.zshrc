@@ -108,8 +108,11 @@ source /opt/ros/foxy/setup.zsh
 export PATH=$PATH:/usr/local/go/bin
 
 # fnm
-export PATH="/home/jaaay/.local/share/fnm:$PATH"
-eval "`fnm env`"
+FNM_PATH="/home/jaaay/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/jaaay/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
 
 # pnpm
 export PNPM_HOME="/home/jaaay/.local/share/pnpm"
@@ -119,5 +122,18 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# bun completions
+[ -s "/home/jaaay/.bun/_bun" ] && source "/home/jaaay/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # OCaml
 eval $(opam env)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/jaaay/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jaaay/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/jaaay/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jaaay/google-cloud-sdk/completion.zsh.inc'; fi
