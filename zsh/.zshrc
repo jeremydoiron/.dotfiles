@@ -101,8 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.zsh_profile
 
+export PATH=$PATH:~/local/bin
+
+export CXXFLAGS="-isystem/usr/include/c++/12 -isystem/usr/include/x86_64-linux-gnu/c++/12"
+export LIBCLANG_PATH="/usr/lib/llvm-14/lib"
+
 # ROS2
-source /opt/ros/foxy/setup.zsh
+# source /opt/ros/foxy/setup.zsh
 
 # go
 export PATH=$PATH:/usr/local/go/bin
@@ -137,3 +142,7 @@ if [ -f '/home/jaaay/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jaaay/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/jaaay/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jaaay/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Created by `pipx` on 2025-01-03 16:31:27
+export PATH="$PATH:/home/jaaay/.local/bin"
+export PATH="/home/jaaay/.pixi/bin:$PATH"
