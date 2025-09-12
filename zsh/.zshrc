@@ -103,46 +103,13 @@ source ~/.zsh_profile
 
 export PATH=$PATH:~/local/bin
 
-export CXXFLAGS="-isystem/usr/include/c++/12 -isystem/usr/include/x86_64-linux-gnu/c++/12"
-export LIBCLANG_PATH="/usr/lib/llvm-14/lib"
-
-# ROS2
-# source /opt/ros/foxy/setup.zsh
-
-# go
-export PATH=$PATH:/usr/local/go/bin
-
 # fnm
 FNM_PATH="/home/jaaay/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/jaaay/.local/share/fnm:$PATH"
+  export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
 
-# pnpm
-export PNPM_HOME="/home/jaaay/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# bun completions
-[ -s "/home/jaaay/.bun/_bun" ] && source "/home/jaaay/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# OCaml
-eval $(opam env)
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/jaaay/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jaaay/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/jaaay/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jaaay/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Created by `pipx` on 2025-01-03 16:31:27
-export PATH="$PATH:/home/jaaay/.local/bin"
-export PATH="/home/jaaay/.pixi/bin:$PATH"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
